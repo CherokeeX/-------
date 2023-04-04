@@ -1,13 +1,128 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --renk-baslik: #ffe978;
+  --baslik-yaziboyutu: 48px;
+  --arama-yaziboyut: 22px;
+  --sehir-yaziboyutu: 64px;
+  --derece-yaziboyutu:90px;
+  --statu-yaziboyut:45px;
+  --renk-aramaarka: #444777;
+  --renk-sonuc-arka: gray;
+  --color-default:white;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
 }
+
+.arkaplan {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: -10;
+  left: 0;
+  top: 0;
+}
+
+.arkaplan .arkaplan-resim {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  z-index: -5;
+  right: 0;
+  bottom: 0;
+}
+.arkaplan .overlay {
+  position: absolute;
+  z-index: -3;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#baslik {
+  margin-top: 40px;
+  text-align: center;
+  color: var(--renk-baslik);
+  font-size: var(--baslik-yaziboyutu);
+}
+.arama {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+#arama-input{
+  width: 80%;
+  height: 30px;
+  text-align: center;
+  border-radius: 15px;
+  border: none;
+  padding: 20px;
+  background-color: var(--renk-aramaarka);
+  font-size: var(--arama-yaziboyut);
+  color:var(--color-default);
+}
+.sonuc{
+position: relative;
+margin-top: 100px;
+
+
+
+}
+
+.sonuc .sehir{
+  color:var(--color-default);
+  font-size: var(--sehir-yaziboyutu);
+  text-align: center;
+
+}
+
+.sonuc .detay{
+  margin-top: 60px;
+  width: 100%;
+    height: 250px;
+    background-color: #aeaeae;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.sonuc .detay .derece{
+  color: var(--color-default);
+  font-size: var(--derece-yaziboyutu);
+  font-weight: bold;
+
+}
+
+
+.sonuc .detay .statu{
+
+  color: var(--color-default);
+  font-size: var(--statu-yaziboyut);
+  font-weight: bold;
+  margin-top: 15px;
+  text-transform: capitalize;
+
+}@media screen and (min-width: 950px){
+
+  .uygulama{
+    width: 60%;
+    height: 100vh;
+    margin:0 auto;
+    background-color: rgba(3,3,3,0,67);
+  }
+}
+
+
+
+
+
+
+
+
+

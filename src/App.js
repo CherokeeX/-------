@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React , {useState } from "react";
+import Arkaplan from "./Bilesenler/Arkaplan";
+import "./index.css";
+import Arama from "./Bilesenler/arama/Aramacubugu";
+import Sonuc from "./Bilesenler/Sonuc";
 
 function App() {
+  
+const [havadurumu, belirthavadurumu] = useState ({});
+  
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className="uygulama">
+      <Arkaplan arkaplan={havadurumu.weather && havadurumu.weather[0].main}/>
+
+      <div id="baslik">HAVA DURUMU UYGULMASI</div>
+
+      <Arama belirthavadurumu={belirthavadurumu} />
+      <Sonuc hava= {havadurumu}/> 
+
+    </section>
   );
 }
 
